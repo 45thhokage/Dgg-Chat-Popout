@@ -4,7 +4,7 @@
   "manifest_version": 3,
   "name": "d.gg extension",
   "description": " dgg chat popout extension",
-  "version": "1.5",
+  "version": "1.6",
   "icons":{
     "128":"./icon/icon.png"
   },

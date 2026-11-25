@@ -68,7 +68,15 @@
   }
 
   // linkers uses reddit's widgets.js to turn these cards into embeds, but
-  // extension pages can't run outside scripts, so build the embed directly.
+  // extension pages can't run outside scripts (it would only log a CSP
+  // error), so don't add it and build the embed directly instead.
+  const REDDIT_WIDGETS = "https://embed.reddit.com/widgets.js";
+  const appendChild = Node.prototype.appendChild;
+  Node.prototype.appendChild = function (node) {
+    if (node instanceof HTMLScriptElement && node.src.startsWith(REDDIT_WIDGETS)) return node;
+    return appendChild.call(this, node);
+  };
+
   function redditCardToEmbed(card) {
     const link = card.querySelector("a[href]");
     if (!link) return;

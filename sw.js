@@ -50,6 +50,12 @@ chrome.runtime.onInstalled.addListener(() => {
 self.addEventListener("fetch", event => {
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin || OWN_FILES.has(url.pathname)) return;
+  // linkers' analytics.js asks this whether to load Google Analytics. Say no:
+  // extension pages can't load outside scripts, so it would only log a CSP error.
+  if (url.pathname === "/api/analytics-config") {
+    event.respondWith(Response.json({ gaMeasurementId: null, analyticsEnabled: false }));
+    return;
+  }
   const target = LINKERS_ORIGIN + url.pathname + url.search;
   if (DIRECT_DESTINATIONS.has(event.request.destination)) {
     event.respondWith(Response.redirect(target, 307));
