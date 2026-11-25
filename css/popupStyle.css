@@ -1,0 +1,45 @@
+body{
+    background-color: #1a1a1a;
+}
+body::-webkit-scrollbar{
+    display:none !important; /*this makes it so that the scrollbar doesn't display*/
+    width: 0px !important;
+}
+.fullContainer{
+    width: 800px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.logoContainer{
+    display: flex;
+    flex-direction: row;
+}
+.logo{
+    top: 0px
+}
+.onlineHeader{
+    visibility: hidden;
+    color: #e00000;
+}
+.contentContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 780px;
+}
+.chatFrame{
+    width: 390px;
+    height: 510px;
+    bottom: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+.linkersFrame{
+    width: 390px;
+    height: 510px;
+    margin: 0px;
+    padding: 0px;
+}
+

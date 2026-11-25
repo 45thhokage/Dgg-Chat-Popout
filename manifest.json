@@ -1,0 +1,29 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 3,
+  "name": "d.gg extension",
+  "description": " dgg chat popout extension",
+  "version": "1.5",
+  "icons":{
+    "128":"./icon/icon.png"
+  },
+  "permissions": [
+    "declarativeNetRequest",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://linkers.ooo/*",
+    "https://www.destiny.gg/*",
+    "https://www.youtube.com/*",
+    "https://www.youtube-nocookie.com/*"
+  ],
+  "background": {
+    "service_worker": "sw.js"
+  },
+  "action":{
+    "default_icon":"./icon/icon.png",
+    "default_popup":"index.html",
+    "default_title": "dgg"
+  }
+}
