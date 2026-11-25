@@ -2,6 +2,8 @@
 
 Chrome extension: destiny.gg chat and linkers.ooo side by side in a toolbar popup.
 
+![Screenshot](docs/screenshot.png)
+
 ## Install
 
 1. Download `Dgg-Chat-Popout.zip` from [Releases](../../releases/latest).
